@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midnight Brew Cafe</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{background:#f5f5f5;color:#333;}
+header{background:#000;padding:20px 8%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
+header h1{color:#8B4513;font-size:26px;}
+nav a{color:#ccc;text-decoration:none;margin-left:20px;font-weight:500;transition:0.3s;}
+nav a:hover{color:#c0392b;}
+.hero{background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;animation:fadeIn 2s ease-in-out;}
+.hero h2{font-size:48px;color:#c0392b;margin-bottom:20px;}
+.hero p{max-width:700px;margin:auto;font-size:18px;color:#ddd;}
+.btn{display:inline-block;margin-top:25px;padding:12px 30px;background:#8B4513;color:#fff;text-decoration:none;border-radius:30px;font-weight:600;transition:0.3s;}
+.btn:hover{background:#c0392b;}
+section{padding:80px 8%;}
+.section-title{text-align:center;margin-bottom:50px;font-size:32px;color:#000;}
+.grid{display:grid;gap:30px;}
+.values{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.box{background:#e0e0e0;padding:30px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:0.4s;}
+.box:hover{transform:translateY(-10px);}
+.box h3{color:#8B4513;margin-bottom:15px;}
+.menu{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.menu-item{background:#fff;padding:20px;border-radius:15px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:0.3s;}
+.menu-item:hover{transform:scale(1.05);}
+.menu-item span:last-child{color:#c0392b;font-weight:600;}
+.booking form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;background:#fff;padding:30px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.booking input,.booking select{padding:12px;border:1px solid #ccc;border-radius:8px;}
+.booking button{padding:12px;background:#8B4513;color:#fff;border:none;border-radius:25px;font-weight:600;cursor:pointer;transition:0.3s;}
+.booking button:hover{background:#c0392b;}
+.cta{background:#000;color:#fff;text-align:center;padding:70px 20px;}
+.cta h2{color:#c0392b;font-size:36px;margin-bottom:20px;}
+.cta p{max-width:600px;margin:auto;color:#ccc;margin-bottom:25px;}
+.contact{background:#e0e0e0;text-align:center;}
+footer{background:#000;color:#aaa;text-align:center;padding:20px;font-size:14px;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@media(max-width:768px){
+.hero h2{font-size:32px;}
+header{flex-direction:column;}
+nav{margin-top:10px;}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Midnight Brew</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#booking">Book</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div>
+<h2>Where Coffee Meets Comfort</h2>
+<p>Experience handcrafted coffee, cozy ambiance, and unforgettable flavors. At Midnight Brew Cafe, every visit feels like home.</p>
+<a href="#menu" class="btn">View Menu</a>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Our Core Values</h2>
+<div class="grid values">
+<div class="box">
+<h3>Quality First</h3>
+<p>Premium beans and fresh ingredients served with excellence and care.</p>
+</div>
+<div class="box">
+<h3>Warm Community</h3>
+<p>A welcoming space for friends, families, and professionals.</p>
+</div>
+<div class="box">
+<h3>Authentic Taste</h3>
+<p>Crafted beverages and bakery delights made with passion.</p>
+</div>
+</div>
+</section>
+
+<section id="menu">
+<h2 class="section-title">Our Menu</h2>
+<div class="grid menu">
+<div class="menu-item"><span>Espresso</span><span>₹120</span></div>
+<div class="menu-item"><span>Cappuccino</span><span>₹180</span></div>
+<div class="menu-item"><span>Latte</span><span>₹190</span></div>
+<div class="menu-item"><span>Mocha</span><span>₹210</span></div>
+<div class="menu-item"><span>Chocolate Croissant</span><span>₹150</span></div>
+<div class="menu-item"><span>Blueberry Cheesecake</span><span>₹220</span></div>
+</div>
+</section>
+
+<section class="booking" id="booking">
+<h2 class="section-title">Book a Table</h2>
+<form onsubmit="event.preventDefault(); alert('Table booked successfully! We will contact you soon.');">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="date" required>
+<select required>
+<option value="">Number of Guests</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5+</option>
+</select>
+<button type="submit">Reserve Now</button>
+</form>
+</section>
+
+<section class="cta">
+<h2>Ready for Your Perfect Cup?</h2>
+<p>Visit Midnight Brew today and enjoy the taste of handcrafted excellence in every sip.</p>
+<a href="#booking" class="btn">Book Your Visit</a>
+</section>
+
+<section class="contact" id="contact">
+<h2 class="section-title">Contact Us</h2>
+<p>Email: contact@midnightbrew.com</p>
+<p>Phone: +91 98765 43210</p>
+<p>Location: MG Road, Bangalore</p>
+</section>
+
+<section id="gallery">
+<h2 class="section-title">Our Gallery</h2>
+<div class="grid menu">
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee" style="width:100%;border-radius:15px;">
+<img src="https://images.unsplash.com/photo-1523942839745-7848d0a7e6c9" alt="Tea" style="width:100%;border-radius:15px;">
+<img src="https://images.unsplash.com/photo-1587731556938-38755b4803a6" alt="Malabar Tea" style="width:100%;border-radius:15px;">
+<img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8" alt="Food" style="width:100%;border-radius:15px;">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Tea and Snacks" style="width:100%;border-radius:15px;">
+<img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0" alt="Latte Art" style="width:100%;border-radius:15px;">
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2 class="section-title">Contact Us</h2>
+<form action="https://formspree.io/f/your-email-id" method="POST" style="max-width:600px;margin:20px auto;display:flex;flex-direction:column;gap:15px;">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
+</form>
+<p>Email: contact@midnightbrew.com</p>
+<p>Phone: +91 98765 43210</p>
+<p>Location: MG Road, Bangalore</p>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919876543210" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 18px;border-radius:50%;font-size:22px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:1000;">💬</a>
+
+<!-- Google Maps Section -->
+<section id="location" style="padding:80px 8%;background:#fff;">
+<h2 class="section-title">Find Us Here</h2>
+<div style="width:100%;height:400px;border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+<iframe src="https://www.google.com/maps?q=MG%20Road%20Bangalore&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</section>
+
+<!-- Premium Luxury Version Section -->
+<section style="background:#000;color:#fff;padding:80px 8%;text-align:center;">
+<h2 style="color:#c0392b;font-size:36px;margin-bottom:20px;">Premier Luxury Cafe Experience</h2>
+<p style="max-width:700px;margin:auto;color:#ccc;margin-bottom:30px;">
+Upgrade to our Premier Luxury Version website package. Includes advanced animations, online payment integration, admin dashboard, custom domain setup, SEO optimization, and premium design enhancements.
+</p>
+<div style="background:#1a1a1a;padding:40px;border-radius:15px;max-width:500px;margin:auto;box-shadow:0 5px 20px rgba(0,0,0,0.4);">
+<h3 style="color:#8B4513;font-size:28px;margin-bottom:15px;">Premium Website Package</h3>
+<p style="font-size:22px;color:#fff;margin-bottom:20px;">₹9,999 / One Time</p>
+<ul style="list-style:none;padding:0;color:#ccc;margin-bottom:25px;">
+<li>✔ Online Payment Integration</li>
+<li>✔ Admin Dashboard</li>
+<li>✔ Custom Email Setup</li>
+<li>✔ Google SEO Optimization</li>
+<li>✔ 1 Year Free Support</li>
+</ul>
+<a href="#contact" class="btn">Upgrade Now</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Midnight Brew Cafe | Crafted with passion.</p>
+</footer>
+
+</body>
+</html>

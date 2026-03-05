@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Midnight Brew Booking</title>
+</head>
+<body>
+
+<h2>Book a Table</h2>
+
+<form onsubmit="saveBooking(event)">
+<input type="text" id="name" placeholder="Name" required><br><br>
+<input type="email" id="email" placeholder="Email" required><br><br>
+<input type="date" id="date" required><br><br>
+<input type="number" id="guests" placeholder="Guests" required><br><br>
+<button type="submit">Book</button>
+</form>
+
+<script>
+async function saveBooking(e){
+e.preventDefault();
+
+const data = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+date: document.getElementById("date").value,
+guests: document.getElementById("guests").value
+};
+
+await fetch("http://localhost:5000/api/bookings", {
+method: "POST",
+headers: {"Content-Type":"application/json"},
+body: JSON.stringify(data)
+});
+
+alert("Booking Saved");
+}
+</script>
+
+</body>
+</html>
